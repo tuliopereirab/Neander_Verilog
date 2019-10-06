@@ -9,12 +9,10 @@ output reg [(DATA_WIDTH-1):0] data_out;
     always @ (posedge clk, posedge reset, posedge enable)
     begin
         if(reset)
-        begin
             data_out <= 0;
-        end
-        else if(enable)
-        begin
+
+        if(enable)
             data_out <= data_in;
-        end
+            
     end
 endmodule       // reg 8 com reset
